@@ -1,0 +1,59 @@
+.featured-dish-highlight{
+	background: linear-gradient(135deg, #f8f4fa 0%, #e9d5f2 100%);
+	padding: 2.5rem;
+	border-radius: 1.25rem;
+	box-shadow: 0 12px 30px rgba(107, 45, 125, 0.18);
+}
+
+.featured-dish-card{
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.featured-dish-title{
+	margin: 0;
+	font-size: 1.75rem;
+	color: #4a1a5c;
+}
+
+.featured-dish-content{
+	color: #555;
+	font-size: 1.05rem;
+}
+
+.featured-dish-meta{
+	font-size: 0.95rem;
+	color: #6c3e7c;
+	margin: 0;
+}
+
+.featured-dish-price{
+	align-self: flex-start;
+	background: #e91e8c;
+	color: #fff;
+	padding: 0.35rem 0.85rem;
+	border-radius: 999px;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+}
+
+.featured-dish-link{
+	align-self: flex-start;
+	display: inline-flex;
+	align-items: center;
+	gap: 0.35rem;
+	font-weight: 600;
+	color: #4a1a5c;
+	text-decoration: none;
+}
+
+.featured-dish-link:hover{
+	text-decoration: underline;
+}
+
+.featured-dish-empty{
+	margin: 0;
+	color: #6c3e7c;
+	font-style: italic;
+}

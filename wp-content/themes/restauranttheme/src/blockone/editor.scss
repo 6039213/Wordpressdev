@@ -1,0 +1,24 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-myblocks-blockone.featured-dish-editor {
+	border: 1px solid #e9d5f2;
+	background: #fff7fb;
+	padding: 1.5rem;
+	border-radius: 12px;
+}
+
+.featured-dish-editor__title {
+	margin: 0 0 0.5rem;
+	font-weight: 600;
+	color: #4a1a5c;
+}
+
+.featured-dish-editor__description {
+	margin: 0;
+	color: #6c3e7c;
+	font-size: 0.95rem;
+}

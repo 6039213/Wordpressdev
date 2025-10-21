@@ -1,0 +1,556 @@
+/*
+Theme Name: Restaurant Schoolbord
+Theme URI: https://example.com/restaurant-schoolbord
+Author: Student Developer
+Author URI: https://example.com
+Description: Een op maat gemaakt WordPress‑thema voor Restaurant Schoolbord in Leiden. Dit thema is ontwikkeld voor de projectopdracht "WordPress Fundamentals" en omvat pagina‑sjablonen voor de homepage, menu, reserveren, blog, contact en algemene paginas.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: restaurant-schoolbord
+*/
+
+/* Algemene basisstijlen */
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #fdf9f3;
+  color: #2c2a29;
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  color: #413f3e;
+}
+
+a {
+  color: #b36a5e;
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #8c5249;
+}
+
+.button {
+  display: inline-block;
+  background-color: #b36a5e;
+  color: #ffffff;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+}
+
+.button:hover {
+  background-color: #8c5249;
+}
+
+/* Site lay‑out */
+.site-header {
+  background-color: #ffffff;
+  border-bottom: 1px solid #e8e5e1;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-branding h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.site-description {
+  font-size: 0.8rem;
+  color: #7a7775;
+}
+
+.main-navigation {
+  margin-top: 10px;
+}
+
+.main-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.main-navigation li {
+  margin: 0 15px;
+}
+
+.main-navigation a {
+  font-weight: 500;
+  color: #413f3e;
+}
+
+.main-navigation a:hover {
+  color: #b36a5e;
+}
+
+/* Footer */
+.site-footer {
+  background-color: #2c2a29;
+  color: #f5f5f5;
+  padding: 30px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.site-footer p {
+  margin: 5px 0;
+}
+
+.footer-social a {
+  margin-right: 15px;
+  color: #f5f5f5;
+  text-decoration: underline;
+}
+
+.footer-social a:hover {
+  color: #d1c5be;
+}
+
+/* Sidebar */
+.sidebar {
+  background-color: #f7f4f0;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.widget {
+  margin-bottom: 30px;
+}
+
+.widget-title {
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  border-bottom: 2px solid #e8e5e1;
+  padding-bottom: 5px;
+}
+
+/* Slider */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.slider img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+  opacity: 0;
+  animation: slideShow 12s infinite;
+}
+
+.slider img:nth-child(1) {
+  animation-delay: 0s;
+}
+.slider img:nth-child(2) {
+  animation-delay: 4s;
+}
+.slider img:nth-child(3) {
+  animation-delay: 8s;
+}
+
+@keyframes slideShow {
+  0%, 33% {
+    opacity: 1;
+  }
+  33.001%, 100% {
+    opacity: 0;
+  }
+}
+
+/* Content area */
+#content {
+  padding: 20px;
+}
+
+.home-intro {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.home-buttons {
+  margin-top: 20px;
+}
+
+/* -------------------------------------------------------
+   Design tokens (CSS variabelen) en basisopmaak
+   ------------------------------------------------------- */
+:root {
+  --color-bg: #fdf9f3;
+  --color-surface: #ffffff;
+  --color-surface-alt: #f7f4f0;
+  --color-text: #2c2a29;
+  --color-text-muted: #7a7775;
+  --color-accent: #b36a5e;
+  --color-accent-dark: #8c5249;
+  --color-border: #e8e5e1;
+  --color-footer-bg: #2c2a29;
+  --color-footer-text: #f5f5f5;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.06);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.08);
+  --container: 1200px;
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+  --space-10: 40px;
+  --space-12: 48px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: 0.2px;
+}
+
+h1 { font-size: clamp(2rem, 2.5vw, 2.6rem); }
+h2 { font-size: clamp(1.6rem, 2vw, 2.2rem); }
+h3 { font-size: clamp(1.3rem, 1.4vw, 1.6rem); }
+
+p { margin: 0 0 var(--space-5); }
+
+img { max-width: 100%; height: auto; display: block; }
+
+.container {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-5);
+}
+
+/* Links en focus-states */
+a {
+  color: var(--color-accent);
+}
+
+a:hover {
+  color: var(--color-accent-dark);
+}
+
+a:focus-visible, .button:focus-visible, button:focus-visible, [tabindex]:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--color-accent) 60%, white);
+  outline-offset: 2px;
+  border-radius: var(--radius-sm);
+}
+
+/* -------------------------------------------------------
+   Knoppen
+   ------------------------------------------------------- */
+.button {
+  background-color: var(--color-accent);
+  color: #ffffff;
+  padding: 12px 22px;
+  margin: 10px 6px;
+  border-radius: var(--radius-sm);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.03em;
+  border: none;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.12s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.button:hover {
+  background-color: var(--color-accent-dark);
+}
+
+.button--secondary {
+  background-color: transparent;
+  color: var(--color-accent);
+  border: 2px solid var(--color-accent);
+}
+
+.button--secondary:hover {
+  color: #ffffff;
+  background-color: var(--color-accent);
+}
+
+.button--light {
+  background-color: #ffffff;
+  color: var(--color-accent-dark);
+  border: 1px solid var(--color-border);
+}
+
+.button--light:hover {
+  background-color: #fff6f2;
+}
+
+/* -------------------------------------------------------
+   Navigatie en header
+   ------------------------------------------------------- */
+.site-header {
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.site-branding h1 {
+  letter-spacing: 0.5px;
+}
+
+.main-navigation a {
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.main-navigation a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 1px;
+  background: var(--color-accent);
+  transition: width 0.2s ease;
+}
+
+.main-navigation a:hover::after {
+  width: 100%;
+}
+
+/* -------------------------------------------------------
+   Footer
+   ------------------------------------------------------- */
+.site-footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+}
+
+.site-footer .container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-6);
+  align-items: flex-start;
+}
+
+/* -------------------------------------------------------
+   Lay-out helpers
+   ------------------------------------------------------- */
+.grid {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid--4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+.card {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+
+.card__media img { width: 100%; height: 220px; object-fit: cover; }
+.card__body { padding: var(--space-6); }
+.card__title { margin: 0 0 var(--space-3); font-size: 1.1rem; }
+.card__meta { color: var(--color-text-muted); font-size: 0.9rem; }
+
+/* -------------------------------------------------------
+   Content area en secties
+   ------------------------------------------------------- */
+#content { padding: var(--space-8) var(--space-5); }
+
+.section {
+  padding: var(--space-12) 0;
+}
+
+.section--alt {
+  background: linear-gradient(180deg, #fff, #fff8f4);
+}
+
+.hero {
+  position: relative;
+  padding: var(--space-12) 0 var(--space-10);
+  text-align: center;
+  background: var(--color-bg);
+}
+
+.hero h1 { margin-bottom: var(--space-3); }
+.hero p { color: var(--color-text-muted); max-width: 720px; margin: 0 auto; }
+
+.home-intro { max-width: 800px; margin: 20px auto 0; }
+.home-buttons { display: flex; justify-content: center; gap: var(--space-4); flex-wrap: wrap; }
+
+/* -------------------------------------------------------
+   Slider verfijning
+   ------------------------------------------------------- */
+.slider {
+  border-radius: 0;
+}
+
+.slider img {
+  animation-timing-function: ease-in-out;
+}
+
+/* -------------------------------------------------------
+   Sidebar & widgets
+   ------------------------------------------------------- */
+.sidebar {
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.widget {
+  padding-bottom: var(--space-4);
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.widget:last-child { border-bottom: 0; padding-bottom: 0; }
+
+.widget-title {
+  border-bottom: 0;
+  padding-bottom: 0;
+  position: relative;
+}
+
+.widget-title::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 3px;
+  background: var(--color-accent);
+  border-radius: 3px;
+  margin-top: 8px;
+}
+
+/* -------------------------------------------------------
+   Formulieren
+   ------------------------------------------------------- */
+input[type="text"], input[type="email"], input[type="tel"], input[type="url"], input[type="search"], input[type="password"], select, textarea {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  background: #fff;
+  color: var(--color-text);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-accent) 20%, transparent);
+  outline: none;
+}
+
+label { display: block; margin-bottom: 6px; font-weight: 600; }
+.form-group { margin-bottom: var(--space-5); }
+.help-text { font-size: 0.9rem; color: var(--color-text-muted); }
+
+/* -------------------------------------------------------
+   Tabel opmaak
+   ------------------------------------------------------- */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.table th, .table td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--color-border);
+  text-align: left;
+}
+
+.table thead th {
+  background: #fff6f2;
+}
+
+.table tbody tr:nth-child(even) {
+  background: #fffaf7;
+}
+
+/* -------------------------------------------------------
+   Menu-grid (gerechten)
+   ------------------------------------------------------- */
+.menu-grid { display: grid; gap: var(--space-6); grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+.menu-item { padding: var(--space-6); border: 1px solid var(--color-border); border-radius: var(--radius-md); background: #fff; box-shadow: var(--shadow-sm); }
+.menu-item__title { margin: 0 0 6px; font-weight: 700; }
+.menu-item__desc { color: var(--color-text-muted); font-size: 0.95rem; }
+.menu-item__price { font-weight: 700; color: var(--color-accent-dark); margin-top: var(--space-3); }
+
+/* -------------------------------------------------------
+   Utility classes
+   ------------------------------------------------------- */
+.text-center { text-align: center; }
+.text-muted { color: var(--color-text-muted); }
+.mt-4 { margin-top: var(--space-4); }
+.mt-6 { margin-top: var(--space-6); }
+.mt-8 { margin-top: var(--space-8); }
+.mb-4 { margin-bottom: var(--space-4); }
+.mb-6 { margin-bottom: var(--space-6); }
+.mb-8 { margin-bottom: var(--space-8); }
+.pt-6 { padding-top: var(--space-6); }
+.pb-6 { padding-bottom: var(--space-6); }
+
+/* -------------------------------------------------------
+   Animaties & voorkeuren
+   ------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+}
+
+/* -------------------------------------------------------
+   Responsiviteit
+   ------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .grid--4 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  .site-header { padding: 16px; }
+  .main-navigation ul { gap: 10px; }
+  .grid--3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid--4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .slider, .slider img { height: 260px; }
+}
+
+@media (max-width: 576px) {
+  .site-header { padding: 14px; }
+  .site-branding h1 { font-size: 1.4rem; }
+  .main-navigation ul { flex-direction: column; align-items: flex-start; }
+  .main-navigation li { margin: 6px 0; }
+  .grid--2, .grid--3, .grid--4 { grid-template-columns: 1fr; }
+  .hero { padding: var(--space-10) 0 var(--space-8); }
+  .slider, .slider img { height: 200px; }
+}

@@ -1,0 +1,1 @@
+console.log("Hello World! (from myblocks-blockone block)");
